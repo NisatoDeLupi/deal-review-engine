@@ -2,7 +2,7 @@
 
 The AI deal-review system I built and ran on Xoxoday's HubSpot portal: a router, four pipeline-segment review skills, the scripts behind them, and the notes I kept on where HubSpot behaves differently from its documentation.
 
-It took a pipeline review from about 6 hours to about 20 minutes, and it was picked up beyond my own book by enterprise hunting, farming and revenue operations. The full write-up, including what it does not do, is in the [case study](https://github.com/NisatoDeLupi/revops-ai-systems/blob/main/case-studies/01-deal-review-engine.md).
+It took a pipeline review from about 6 hours to about 20 minutes, and it was picked up beyond my own book by enterprise hunting, farming and revenue operations. The full write-up, including what it does not do, is in the [case study](CASE_STUDY.md).
 
 I specified it, made the calls on scoring and writeback rules, and own it. Claude was the implementation tool. These are Claude skills (Markdown instructions plus Python helpers), run inside Claude with a HubSpot connector, not a standalone application.
 
@@ -31,6 +31,8 @@ Every deal gets one manager note plus two tasks: the rep acts at T+1, the manage
 | `scripts/build_review.py`, `build_rows.py`, `build_wb.py` | Turn scored deals into the review workbook |
 | `docs/` | The skill-family overview, the cache design and a patch note |
 | `notes/` | The working memory from the project: HubSpot association quirks, ACV field mapping, deal-to-company resolution, sandbox limits |
+| `patterns/engagement-cache/` | The cache idea rewritten as a standalone, CRM-neutral module with tests: `python patterns/engagement-cache/test_engagement_cache.py` |
+| `CASE_STUDY.md`, `LESSONS.md` | The write-up, and what I learned about letting AI write to a production CRM |
 
 ## Running it
 
@@ -46,6 +48,6 @@ This is the real working code, not a rewrite, with identifying details swapped o
 - Emails are `<email>`.
 - No CRM data, caches or past review workbooks are included. A third-party library of general sales-skill documents that sat alongside the project is not included either.
 
-Related: [sdr-analytics-suite](https://github.com/NisatoDeLupi/sdr-analytics-suite) · [icp-routing-engine](https://github.com/NisatoDeLupi/icp-routing-engine) · [revops-ai-systems](https://github.com/NisatoDeLupi/revops-ai-systems)
+Related: [sdr-analytics-suite](https://github.com/NisatoDeLupi/sdr-analytics-suite) · [icp-routing-engine](https://github.com/NisatoDeLupi/icp-routing-engine)
 
 Abhimanyu Singh Shekhawat · [linkedin.com/in/abhimanyu-singh-shekhawat](https://www.linkedin.com/in/abhimanyu-singh-shekhawat) · [github.com/NisatoDeLupi](https://github.com/NisatoDeLupi)
