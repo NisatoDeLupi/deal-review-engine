@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.plugin
+*.xlsx
+node_modules/
+.DS_Store
+.vscode/
+.idea/
